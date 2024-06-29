@@ -91,3 +91,24 @@ const library = {
        console.log(library);
   }
 };
+
+// generates a unique id
+// (already implemented: use this for addTrack and addPlaylist)
+const generateUid = function() {
+       return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+};
+
+const globalTrackId = generateUid();
+
+library.printPlaylists();
+console.log("------------------------------");
+library.printTracks();
+console.log("------------------------------");
+library.printPlaylist("p01");
+console.log("------------------------------");
+library.addTrackToPlaylist("t03", "p01");
+console.log("------------------------------");
+library.addTrack("Track Add Test", "RK", "Web Dev Bootcamp");
+console.log("------------------------------");
+library.addPlaylist("Playlist Add Test");
+console.log("------------------------------");
